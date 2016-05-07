@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3" style="min-height: 500px;padding: 10px; border: 1px solid black;">
+    <div class="chat-header">
+      <h3>Channel Chat</h3>
+
+      <div class="clear-chat">
+        <span>Clear</span>
+        <i class="fa fa-refresh" title="Clear" ng-click="ctrl.clearChat()"></i>
+      </div>
+    </div>
+    <div style="clear: both;"></div>
+    
+    <div class="thread">
+
+      <div class="message" ng-repeat="message in ctrl.msgs">
+        <div class="message-wrap" ng-class="message.type === 'system' ? 'sys-msg' : 'info' ">
+          <span class="message-by">{{ message.username }} -</span><span class="message-content">{{ message.text }}</span>
+        </div>
+      </div>
+
+      <div class="message" ng-repeat="message in ctrl.Messages.collection | orderBy:'timeStamp' track by $index">
+        <div class="message-wrap" ng-class="message.type === 'system' ? 'sys-msg' : 'info' ">
+          <span class="message-by">{{ message.username }} -</span><span class="message-content">{{ message.content }}</span>
+        </div>
+      </div>
+    </div>
+    <div class="new-msg-container">
+      <div class="new-msg-wrap">
+        <textarea class="msg-box" ng-model="ctrl.new_message" autofocus required placeholder="Type message...."
+                  ng-keydown="ctrl.keyPress($event);"></textarea>
+        <button class="btn msg-send" ng-click="ctrl.submit(ctrl.new_message)">Send</button>
+      </div>
+    </div>
+  </div>
+</div>

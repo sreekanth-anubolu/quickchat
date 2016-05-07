@@ -1,0 +1,44 @@
+<html>
+   <head>
+      <title>QuickChat</title>
+      <link rel="stylesheet" href="/static/library/css/font-awesome-4.5.0/css/font-awesome.css" >
+      <link rel="stylesheet" href="/static/library/css/bootstrap.min.css" >
+      <link rel="stylesheet" href="/static/library/css/webapp/home.css" >
+   </head>
+    <script>
+        window.username = "{{ request.user.username }}"
+    </script>
+  <body style="padding-top: 70px;" ng-app="quickchat" id="ng-app">
+    <nav class="navbar navbar-default margintop">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <h3> Quick Chat</h3>
+        </div>
+        <div class="logout-button">
+            <strong> {{ request.user.username }} </strong>
+        </div>
+        <a href="/logout/" class="logout-button"> <i class="fa fa-sign-out fa-2x" aria-hidden="true"></i> </a>
+      </div>
+    </nav>
+    {% csrf_token %}
+    <div class="container" ng-view>
+
+    </div>
+
+
+    <script type = "text/javascript" src = "/static/library/js/jquery.min.js"></script>
+    <!--script type = "text/javascript" src = "/static/library/js/sockjs.js"></script>
+    <script type = "text/javascript" src = "/static/library/app.js"></script-->
+    
+  
+    <script type = "text/javascript" src = "/static/library/js/angular.min.js"></script>
+    <script type = "text/javascript" src = "/static/library/js/angular-route.min.js"></script>
+    <!--script type = "text/javascript" src = "/static/library/js/ngSocket.js"></script-->
+    <script type = "text/javascript" src = "/static/library/js/angular-websocket.js"></script>
+
+    <script type = "text/javascript" src = "/static/app/app.js"></script>
+    <script type = "text/javascript" src = "/static/app/config.js"></script>
+    <script type = "text/javascript" src = "/static/app/service.js"></script>
+    <script type = "text/javascript" src = "/static/app/controller.js"></script>
+  </body>
+</html>
