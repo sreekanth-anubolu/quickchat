@@ -26,7 +26,7 @@ Run Quickchat:
   
   - Run tools/migrate.sh
 
-Thats it, all set go to 127.0.0.l:8000 to see app in action.
+Thats it, all set go to 127.0.0.1:8000 to see app in action.
 
 Real time channel chat:
   Channels(https://github.com/andrewgodwin/channels) is an exciting upcoming feature of Django, it allows Django apps to implement realtime communication using websockets.
