@@ -9,8 +9,7 @@ read dbuser
 echo -n "Enter database user password: "
 read dbpw
 
-db="drop database $dbname;
-    create database $dbname;
+db="create database $dbname;
     GRANT ALL PRIVILEGES ON $dbname.* TO $dbuser@localhost IDENTIFIED BY '$dbpw';
     FLUSH PRIVILEGES;"
 mysql -u root -p$rootpw -e "$db"
